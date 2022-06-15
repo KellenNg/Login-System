@@ -9,6 +9,7 @@ class Auth:
         if password:
             file.write("\n" + self.username + ", " + password)  # concatenation(串聯)
             file.close()
+            print("Registration Success")
         else:
             file.close()
 

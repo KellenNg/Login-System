@@ -11,5 +11,7 @@ class Main(Registration, Login):
         elif number_choise == 2:
             Kellen = Registration(input("Registrate your username: "), input("Registrate your password: "))
             Kellen.store_data(Kellen.get_credentials())
+            print("If you want to login in, please write 1; if you want to registrate, please write 2")
+            number_choise = int(input("Which number would you want to choose: "))
         else:
             print("Are you blind? You must choose 1 or 2!")

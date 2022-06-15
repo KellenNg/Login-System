@@ -17,7 +17,10 @@ class Registration(Auth):
     def get_credentials(self):
         if self.validate_username():
             print("The username can be used")
-            if self.validate_password():
+            while not self.validate_password():
+                print("The password should equal or more than 8 characters.")
+                self.password = input("Registrate your password: ")
+            else:
                 if self.password == input("Enter your password again: "):
                     print("The password can be used")
                     m = hashlib.md5()
@@ -27,7 +30,6 @@ class Registration(Auth):
                     return hashed
                 else:
                     print("The password is different from the password at first")
-            else:
-                print("The password should equal or more than 8 characters.")
         else:
             print("Please enter different username, this username has been used!")
+            
